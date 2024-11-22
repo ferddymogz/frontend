@@ -3,28 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 </head>
 <body>
 
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Lista de Videos</h1>
 
-<h1>Videos</h1>
+    <div class="table-responsive">
+        <table id="videos_table" class="table table-striped table-hover table-bordered">
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">Cod.</th>
+                <th scope="col">Título</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Duración</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 
-<table id="videos_table">
-    <thead>
-    <td>Cod.</td>
-    </thead>
-
-</table>
-
-
-<a href="../index.html">
-    Inicio
-</a>
+    <a href="../index.html" class="btn btn-secondary mt-3">Volver al inicio</a>
+</div>
 </body>
 </html>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 
     find_all_videos();
@@ -51,7 +59,7 @@
     }
 
     function createTable(json, table) {
-        var tableBody = document.getElementById(table);
+        var tableBody = document.getElementById(table).querySelector('tbody');
 
         var child = tableBody.childElementCount;
         for ( let row = 1; row < child; row++ ) {
